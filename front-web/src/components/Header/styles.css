@@ -8,7 +8,9 @@
 .logo-text {
     font-weight: bold;
     font-size: 24px;
-    margin-left: 15px;
+    position: inherit;
+    margin-left: 2em;
+    margin-top: -1.4em;
 }
   
 .logo-text-1 {
