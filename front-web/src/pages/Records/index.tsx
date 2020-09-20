@@ -4,15 +4,16 @@ import { RecordsResponse } from './types';
 import { formatDate } from './helpers';
 import './styles.css';
 import Pagination from './Pagination';
-import { Link } from 'react-router-dom';
-
-const BASE_URL = 'https://dspesquisa-andysteel.herokuapp.com';
+import Filters from '../../components/Filters';
+import { BASE_URL } from '../../config/url.config';
 
 const Records = () => {
 
+    //useState - Observer for listenning changes
     const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>();
     const [activePage, setActivePage] = useState(0);
     
+    //useEffect - init data for the component 
     useEffect(() => {
         axios.get(`${BASE_URL}/records?linesPerPage=12&page=${activePage}`)
             .then(response => setRecordsResponse(response.data));
@@ -20,13 +21,10 @@ const Records = () => {
 
     return (
         <div className="page-container">
-            <div className="filters-container records-actions">
-                <Link to="/charts">
-                    <button className="action-filters">
-                        VER GRÁFICOS
-                    </button>
-                </Link>
-            </div>
+            <Filters 
+                link="/charts"
+                textLink="VER GRÁFICOS"
+            />
             <table className="records-table" cellPadding="0" cellSpacing="0"> 
                 <thead>
                     <tr>
