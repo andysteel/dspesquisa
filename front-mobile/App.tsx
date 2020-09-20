@@ -7,6 +7,7 @@ import {
   Play_700Bold
 } from '@expo-google-fonts/play';
 import { AppLoading } from 'expo';
+import Routes from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,8 +19,8 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <StatusBar style="auto" />
+      <Routes />
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -27,8 +28,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
