@@ -39,6 +39,7 @@ public class RecordController {
         @RequestParam(value = "linesPerPage", defaultValue = "0") Integer linesPerPage,
         @RequestParam(value = "orderBy", defaultValue = "moment") String orderBy,
         @RequestParam(value = "direction", defaultValue = "DESC") String direction) {
+        io.opentracing.contrib.jdbc.TracingDriver.setInterceptorMode(true);
 
         Instant minDate = ("".equals(min)) ? null : Instant.parse(min);
         Instant maxDate = ("".equals(max)) ? null : Instant.parse(max);

@@ -20,6 +20,7 @@ public class GameController {
 
     @GetMapping
     public ResponseEntity<List<GameDTO>> findAll() {
+        io.opentracing.contrib.jdbc.TracingDriver.setInterceptorMode(true);
         return ResponseEntity.ok().body(gameService.findALL());
     }
 }
