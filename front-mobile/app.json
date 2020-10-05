@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "front-mobile",
+    "name": "Big Game Survey",
     "slug": "front-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0B1F34"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,7 +17,12 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.gmail.andersoninfonet",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.gmail.andersoninfonet",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
